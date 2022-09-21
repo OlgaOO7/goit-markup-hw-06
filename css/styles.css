@@ -47,6 +47,7 @@
   --checkbox-color: #2196f3;
   --checkbox-border-color: #212121;
   --input-fill: #2196f3;
+  --checkbox-link-color: #2196f3;
   --button-send-box-shadow-color: rgba(0, 0, 0, 0.15);
   --placeholder-color: rgba(117, 117, 117, 0.5);
   --footer-input-border-color: rgba(255, 255, 255, 0.3);
@@ -539,7 +540,7 @@ img {
   display: inline-block;
   padding-left: 0px;
   padding-right: 0px;
-  margin-right: 93px;
+  margin-right: auto;
 }
 
 .join-part .join {
@@ -586,10 +587,11 @@ img {
 
 .footer-form-title {
   margin-bottom: 20px;
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 14px;
   line-height: 1.17;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
   color: var(--white-text-color);
 }
 
@@ -639,7 +641,7 @@ img {
   column-gap: 10px;
   align-items: center;
   justify-content: center;
-  font-weight: 700px;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
@@ -816,13 +818,17 @@ img {
   width: 100%;
   height: 100%;
   background-color: var(--backdrop-background-color);
+
   opacity: 1;
-  transition: opacity var(--timing-function);
+  visibility: visible;
+  pointer-events: auto;
+
+  transition: opacity var(--timing-function), visibility var(--timing-function);
 }
 
 .backdrop.is-hidden {
-  visibility: hidden;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
@@ -942,6 +948,7 @@ img {
 .modal-form-checkbox {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 30px;
   font-size: 14px;
   line-height: 1.71;
@@ -958,6 +965,7 @@ img {
 }
 
 .textarea-input {
+  display: block;
   width: 100%;
   height: 120px;
   resize: none;
@@ -999,12 +1007,24 @@ img {
   box-shadow: 0 0 0 2px var(--checkbox-color);
 }
 
+.agreement-condition-link {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--checkbox-link-color);
+  text-decoration: underline;
+}
+
 .button-send-form {
   width: 200px;
   height: 50px;
   padding: 10px 52px;
   align-items: center;
   align-self: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
   color: var(--white-text-color);
   background-color: var(--button-background-color);
   border: none;
